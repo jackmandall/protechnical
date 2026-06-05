@@ -83,7 +83,7 @@
   .nav-links a:hover { color: var(--energy); border-bottom-color: var(--energy); }
   .nav-links a.nav-cta { border: 0; background: var(--grad-energy); color: var(--white); padding: 9px 18px; border-radius: 999px; font-weight: 700; }
   .nav-links a.nav-cta:hover { filter: brightness(1.05); border-bottom-color: transparent; }
-  @media (max-width: 860px) { .nav-links a:not(.nav-cta) { display: none; } }
+  @media (max-width: 860px) { .nav-links a:not(.nav-cta):not(.nav-call) { display: none; } }
 
   /* Hero */
   .hero { background: var(--grad-primary); color: var(--white); padding: 88px 28px 96px; position: relative; overflow: hidden; }
@@ -251,6 +251,10 @@
   .reason h3 { font-family: 'Roboto Flex', Arial, sans-serif; font-weight: 800; color: var(--navy); font-size: 17px; margin: 0 0 6px; letter-spacing: -0.01em; }
   .reason p { color: var(--grey-500); font-size: 14px; line-height: 1.5; }
 
+  .nav-links a.nav-call { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; border: 1px solid var(--grey-300); border-radius: 999px; background: var(--white); color: var(--energy); flex-shrink: 0; transition: background .2s, color .2s, border-color .2s; }
+  .nav-links a.nav-call:hover { background: var(--energy); color: var(--white); border-color: var(--energy); }
+  .nav-links a.nav-call svg { display: block; width: 18px; height: 18px; }
+
   footer { background: var(--navy); color: rgba(255,255,255,.7); padding: 28px; font-size: 14px; }
   footer .f-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
   footer b { color: var(--white); font-weight: 600; }
@@ -267,6 +271,7 @@
       <a href="#savings">Your savings</a>
       <a href="#reasons">Why BigChange</a>
       <a href="#quote">Your quote</a>
+      <a class="nav-call" href="tel:+447939910833" aria-label="Call us"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.2 2.2z"/></svg></a>
       <a class="nav-cta" href="https://landing.bigchange.com/eTISFrny3loWNSqR" target="_blank" rel="noopener">View your quote</a>
     </div>
   </div>

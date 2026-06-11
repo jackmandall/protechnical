@@ -93,7 +93,7 @@
   .nav-inner { max-width: 1200px; margin: 0 auto; padding: 14px 28px; display: flex; align-items: center; gap: 28px; }
   .logo { display: inline-flex; align-items: center; gap: 10px; font-family: 'Roboto Flex', Arial, sans-serif; font-weight: 800; color: var(--navy); font-size: 18px; letter-spacing: -0.01em; }
   .logo-full { display: inline-block; height: 28px; width: auto; flex-shrink: 0; }
-  .logo-div { color: var(--grey-300); font-weight: 400; font-size: 20px; margin: 0 2px; }
+  .logo-div { color: var(--energy); font-weight: 400; font-size: 20px; margin: 0 2px; }
   .logo-brightside { display: inline-block; height: 30px; width: auto; flex-shrink: 0; }
     .nav-links { margin-left: auto; display: flex; gap: 22px; align-items: center; }
   .nav-links a { color: var(--navy); font-family: 'Inter', Arial, sans-serif; font-size: 15px; font-weight: 600; padding: 6px 0; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
@@ -119,7 +119,7 @@
   .btn:hover { transform: translateY(-1px); }
   .btn-primary { background: var(--grad-energy); color: var(--white); box-shadow: 0 8px 22px rgba(0,114,206,.35); }
   .btn-primary:hover { filter: brightness(1.06); }
-  .btn-green { background: var(--green); color: var(--navy); box-shadow: 0 8px 22px rgba(40,226,137,.32); }
+  .btn-green { background: var(--green); color: var(--charcoal); box-shadow: 0 8px 22px rgba(40,226,137,.32); }
   .btn-green:hover { filter: brightness(1.04); }
   .btn-ghost { background: rgba(255,255,255,.08); color: var(--white); border: 1px solid rgba(255,255,255,.3); }
   .btn-ghost:hover { background: rgba(255,255,255,.16); }
@@ -213,7 +213,7 @@
   /* Hero key points */
   .kp-list { display: grid; gap: 14px; margin-top: 4px; }
   .kp { display: flex; gap: 12px; align-items: flex-start; }
-  .kp .ic { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--green); color: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; margin-top: 1px; }
+  .kp .ic { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--green); color: var(--charcoal); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; margin-top: 1px; }
   .kp .kp-t { color: var(--white); font-weight: 600; font-size: 15px; }
   .kp .kp-d { color: rgba(255,255,255,.72); font-size: 13.5px; margin-top: 2px; }
 
@@ -272,6 +272,54 @@
   .nav-links a.nav-call:hover { background: var(--energy); color: var(--white); border-color: var(--energy); }
   .nav-links a.nav-call svg { display: block; width: 18px; height: 18px; }
 
+  /* Current vs future comparison table */
+  .cvf-table { border:1px solid var(--grey-200); border-radius: var(--r-lg); overflow:hidden; box-shadow: var(--shadow-sm); background: var(--white); }
+  .cvf-trow { display:grid; grid-template-columns: 0.85fr 1.5fr 1.5fr; }
+  .cvf-trow + .cvf-trow { border-top:1px solid var(--grey-200); }
+  .cvf-th { padding:13px 18px; font-family:'Roboto Flex', Arial, sans-serif; font-weight:800; font-size:13.5px; letter-spacing:.02em; }
+  .cvf-th-theme { background: var(--grey-100); }
+  .cvf-th-now { background: var(--grey-100); color: var(--grey-500); }
+  .cvf-th-fut { background: var(--navy); color: var(--white); }
+  .cvf-c { padding:15px 18px; font-size:14px; line-height:1.5; }
+  .cvf-c.theme { background: var(--grey-50); font-family:'Roboto Flex', Arial, sans-serif; font-weight:700; color: var(--navy); font-size:14.5px; display:flex; align-items:center; border-right:1px solid var(--grey-200); }
+  .cvf-c.now { color: var(--grey-500); border-right:1px solid var(--grey-200); }
+  .cvf-c.fut { color: var(--charcoal); background: rgba(40,226,137,.06); }
+  .cvf-c.fut b { color: var(--navy); font-weight:600; }
+  @media (max-width:760px){
+    .cvf-trow { grid-template-columns:1fr; }
+    .cvf-thead { display:none; }
+    .cvf-c.theme { border-right:0; background: var(--navy); color: var(--white); }
+    .cvf-c.now { border-right:0; }
+    .cvf-c.now::before { content:"Current"; display:block; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--grey-500); margin-bottom:5px; }
+    .cvf-c.fut::before { content:"With BigChange"; display:block; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:#11935a; margin-bottom:5px; }
+  }
+  /* Inline quote breakdown + ROI (combined section) */
+  .qtab { width:100%; border-collapse:collapse; font-size:14px; margin-bottom:18px; }
+  .qtab th { text-align:left; color:var(--grey-500); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.03em; padding:0 0 8px; border-bottom:1px solid var(--grey-200); }
+  .qtab td { padding:10px 0; border-bottom:1px solid var(--grey-100); color:var(--charcoal); vertical-align:top; }
+  .qtab td.r, .qtab th.r { text-align:right; white-space:nowrap; }
+  .qtab .qd { color:var(--grey-500); font-size:12.5px; }
+  .qtab .strike { color:var(--grey-500); text-decoration:line-through; font-size:12.5px; }
+  .qcard { background:var(--white); border:1px solid var(--grey-200); border-radius:var(--r-lg); box-shadow:var(--shadow-md); overflow:hidden; }
+  .qcard-head { padding:24px 26px 18px; border-bottom:1px solid var(--grey-200); }
+  .qcard-tag { display:inline-block; font-family:'Roboto Flex',Arial,sans-serif; font-weight:700; font-size:13px; letter-spacing:.04em; text-transform:uppercase; color:var(--energy); margin-bottom:8px; }
+  .qcard-price { font-family:'Roboto Flex',Arial,sans-serif; font-weight:800; color:var(--navy); font-size:42px; letter-spacing:-0.02em; line-height:1; }
+  .qcard-price small { font-size:15px; font-weight:600; color:var(--grey-500); }
+  .qcard-vat { color:var(--grey-500); font-size:14px; margin-top:6px; }
+  .qcard-body { padding:20px 26px 26px; }
+  .savebox { background:rgba(40,226,137,.12); border:1px solid rgba(40,226,137,.4); border-radius:var(--r-md); padding:16px 18px; margin-bottom:20px; }
+  .savebox .big { font-family:'Roboto Flex',Arial,sans-serif; font-weight:800; color:#11935a; font-size:22px; }
+  .savebox .sub { color:#0f7a4c; font-size:13.5px; margin-top:3px; }
+  .qincl { margin:0 0 20px; padding:0; list-style:none; }
+  .qincl li { display:flex; align-items:flex-start; gap:10px; padding:6px 0; font-size:14.5px; line-height:1.45; color:var(--charcoal); }
+  .qincl li::before { content:"\2713"; flex-shrink:0; width:18px; height:18px; border-radius:50%; background:var(--green); color:var(--charcoal); font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; line-height:1; margin-top:1px; }
+  .qr-grid { display:grid; grid-template-columns: 1fr 1fr; gap:24px; align-items:start; }
+  @media (max-width:1000px){ .qr-grid { grid-template-columns:1fr; } }
+  .qr-grid .qcard { max-width:none; }
+  .qr-grid .calc { grid-template-columns:1fr; gap:18px; }
+  .roi-col .assump { margin-top:0; }
+  .calc-row .calc-num { width:100%; }
+  .roi-col .calc-inputs { display:none; }
   footer { background: var(--navy); color: rgba(255,255,255,.7); padding: 28px; font-size: 14px; }
   footer .f-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
   footer b { color: var(--white); font-weight: 600; }
@@ -285,9 +333,8 @@
     <div class="nav-links">
       <a href="#demo">Your demo</a>
       <a href="#change">Current vs future</a>
-      <a href="#savings">Your savings</a>
       <a href="#reasons">Why BigChange</a>
-      <a href="#quote">Your quote</a>
+      <a href="#quote">Quote &amp; ROI</a>
       <a class="nav-call" href="tel:+447939910833" aria-label="Call us"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.2 2.2z"/></svg></a>
       <a class="nav-cta" href="https://landing.bigchange.com/eTISFrny3loWNSqR" target="_blank" rel="noopener">View your quote</a>
     </div>
@@ -332,80 +379,17 @@
   </div>
 </section>
 
-<section class="block" id="change">
+<section class="block" id="quote">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">From today to BigChange</div>
-      <h2>How ProTechnical Services runs today, and how it runs on BigChange</h2>
-      <p>Drawn from your demo on 2 June. The left shows how the work flows today across paper, Xero and the insurer portals. The right shows the same work on one platform.</p>
+      <div class="kicker">Your quote and your return</div>
+      <h2>The cost, and what it&#x27;s worth</h2>
+      <p>On the left, your quote broken down. On the right, what BigChange could be worth to ProTechnical Services at your team size.</p>
     </div>
-    <div class="cvf">
-      <div class="cvf-head">
-        <div class="col now"><span class="pill">Current</span> Paper, Xero &amp; portals</div>
-        <div class="col fut"><span class="pill">Future</span> One BigChange platform</div>
-      </div>
-      <div class="cvf-block">
-        <div class="cvf-theme">Standing up the FM business</div>
-        <div class="cvf-pair">
-          <div class="cell now"><span class="tag">Current</span>Building a new maintenance arm from scratch, with jobs, quotes and accounts spread across separate tools.</div>
-          <div class="cell fut"><span class="tag">Future</span><b>One platform from day one.</b> Add engineers as you grow at the same per-user rate, with 24/7 UK support from Leeds.</div>
-        </div>
-      </div>
-      <div class="cvf-block">
-        <div class="cvf-theme">Field jobs &amp; the mobile app</div>
-        <div class="cvf-pair">
-          <div class="cell now"><span class="tag">Current</span>No single view of who is on site or what was done, with job records kept on paper.</div>
-          <div class="cell fut"><span class="tag">Future</span>Each engineer sees their jobs on a tablet or phone, with <b>drive navigation, on-site risk assessments, photos, job cards and customer sign-off</b>. The device is tracked, not the person.</div>
-        </div>
-      </div>
-      <div class="cvf-block">
-        <div class="cvf-theme">Parent &amp; child sites</div>
-        <div class="cvf-pair">
-          <div class="cell now"><span class="tag">Current</span>Juggling who you invoice against who you actually visit.</div>
-          <div class="cell fut"><span class="tag">Future</span><b>Parent and child companies</b>: invoice one site, visit another, all linked to the same job.</div>
-        </div>
-      </div>
-      <div class="cvf-block">
-        <div class="cvf-theme">Quotes, jobs &amp; invoicing</div>
-        <div class="cvf-pair">
-          <div class="cell now"><span class="tag">Current</span>Quotes and documents built by hand, then numbers re-keyed into the accounts package.</div>
-          <div class="cell fut"><span class="tag">Future</span><b>Survey to quote to accepted job to invoice in a few clicks</b>, with two-way Xero Platinum or Sage 50 integration. No double entry.</div>
-        </div>
-      </div>
-      <div class="cvf-block">
-        <div class="cvf-theme">Planned maintenance &amp; SLAs</div>
-        <div class="cvf-pair">
-          <div class="cell now"><span class="tag">Current</span>Recurring visits, call-outs and SLAs hard to keep on top of.</div>
-          <div class="cell fut"><span class="tag">Future</span>Planned maintenance, call-outs and SLAs <b>scheduled and tracked automatically</b>, with alerts when something fails.</div>
-        </div>
-      </div>
-      <div class="cvf-block">
-        <div class="cvf-theme">Reporting &amp; cash</div>
-        <div class="cvf-pair">
-          <div class="cell now"><span class="tag">Current</span>No easy view of job profitability or which invoices are overdue.</div>
-          <div class="cell fut"><span class="tag">Future</span><b>JustAsk</b> reports job profitability and flags overdue invoices, and emails you the chase list every Tuesday at 8:30.</div>
-        </div>
-      </div>
-      <div class="cvf-block">
-        <div class="cvf-theme">Field feedback &amp; safety</div>
-        <div class="cvf-pair">
-          <div class="cell now"><span class="tag">Current</span>Near-misses and quality issues captured on paper, if at all.</div>
-          <div class="cell fut"><span class="tag">Future</span>Operatives feed back <b>near-misses, accidents and quality notes</b> from the field, flagged straight to a supervisor.</div>
-        </div>
-      </div>
-    </div>
-    <p class="cvf-foot">Based on your demo and discovery calls. Figures and savings are quantified in the section below.</p>
-  </div>
-</section>
-
-<section class="block" id="savings">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">Calculate your savings</div>
-      <h2>What BigChange could be worth to ProTechnical Services</h2>
-      <p>Pre-filled with your team size and BigChange's benchmark figures. Adjust any value to see the impact update live. Based on the same model used on bigchange.com/pricing.</p>
-    </div>
-    <div class="calc">
+    <div class="qr-grid">
+      <div><div class="qcard"><div class="qcard-head"><span class="qcard-tag">3 users &middot; 36-month term</span><div class="qcard-price">£223<small> / month</small></div><div class="qcard-vat">£267.60 inc VAT</div></div><div class="qcard-body"><div class="savebox"><div class="big">You save £229.82 a month</div><div class="sub">50.8% off the standard rate of £452.82 a month &middot; £8,273.52 over the term. Licences are £65 a user, 35.0% off the £99.94 standard rate.</div></div><table class="qtab"><thead><tr><th>Item</th><th class="r">Unit / month</th><th class="r">Monthly</th></tr></thead><tbody><tr><td>1 &times; Back office web user<div class="qd">JobWatch software, full back-office platform</div></td><td class="r"><span class="strike">£99.94</span><br>£65</td><td class="r">£65</td></tr><tr><td>2 &times; Mobile app licence with tracking<div class="qd">JobWatch app and device tracking on your own devices</div></td><td class="r"><span class="strike">£99.94</span><br>£65</td><td class="r">£130</td></tr><tr><td>1 &times; Smart start onboarding<div class="qd">Implementation package, 36-month (standard rate)</div></td><td class="r">£28</td><td class="r">£28</td></tr><tr><td>1 &times; Xero link<div class="qd">Two-way accounts integration, setup and support &mdash; included free</div></td><td class="r"><span class="strike">£125</span><br>£0</td><td class="r">£0</td></tr></tbody></table><ul class="qincl"><li>1 back office user</li><li>2 field users with tracking on your own devices</li><li>Xero link included free (normally £125)</li><li>Smart start onboarding</li></ul><a class="btn btn-quote" href="https://landing.bigchange.com/eTISFrny3loWNSqR" id="quote-btn" target="_blank" rel="noopener" style="width:100%; justify-content:center;">View and sign your quote &rarr;</a></div></div></div>
+      <div class="roi-col">
+        <div class="calc">
       <div class="calc-inputs">
         <div class="calc-field">
           <label>How many engineers or technicians do you have?</label>
@@ -458,6 +442,60 @@
         </div>
       </div>
     </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="change">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">From today to BigChange</div>
+      <h2>How ProTechnical Services runs today, and how it runs on BigChange</h2>
+      <p>A side-by-side of how the work flows today, and how it flows on one platform.</p>
+    </div>
+    <div class="cvf-table">
+      <div class="cvf-trow cvf-thead">
+        <div class="cvf-th cvf-th-theme"></div>
+        <div class="cvf-th cvf-th-now">Current</div>
+        <div class="cvf-th cvf-th-fut">With BigChange</div>
+      </div>
+      <div class="cvf-trow">
+        <div class="cvf-c theme">Standing up the FM business</div>
+        <div class="cvf-c now">Building a new maintenance arm from scratch, with jobs, quotes and accounts spread across separate tools.</div>
+        <div class="cvf-c fut"><b>One platform from day one.</b> Add engineers as you grow at the same per-user rate, with 24/7 UK support from Leeds.</div>
+      </div>
+      <div class="cvf-trow">
+        <div class="cvf-c theme">Field jobs &amp; the mobile app</div>
+        <div class="cvf-c now">No single view of who is on site or what was done, with job records kept on paper.</div>
+        <div class="cvf-c fut">Each engineer sees their jobs on a tablet or phone, with <b>drive navigation, on-site risk assessments, photos, job cards and customer sign-off</b>. The device is tracked, not the person.</div>
+      </div>
+      <div class="cvf-trow">
+        <div class="cvf-c theme">Parent &amp; child sites</div>
+        <div class="cvf-c now">Juggling who you invoice against who you actually visit.</div>
+        <div class="cvf-c fut"><b>Parent and child companies</b>: invoice one site, visit another, all linked to the same job.</div>
+      </div>
+      <div class="cvf-trow">
+        <div class="cvf-c theme">Quotes, jobs &amp; invoicing</div>
+        <div class="cvf-c now">Quotes and documents built by hand, then numbers re-keyed into the accounts package.</div>
+        <div class="cvf-c fut"><b>Survey to quote to accepted job to invoice in a few clicks</b>, with two-way Xero Platinum or Sage 50 integration. No double entry.</div>
+      </div>
+      <div class="cvf-trow">
+        <div class="cvf-c theme">Planned maintenance &amp; SLAs</div>
+        <div class="cvf-c now">Recurring visits, call-outs and SLAs hard to keep on top of.</div>
+        <div class="cvf-c fut">Planned maintenance, call-outs and SLAs <b>scheduled and tracked automatically</b>, with alerts when something fails.</div>
+      </div>
+      <div class="cvf-trow">
+        <div class="cvf-c theme">Reporting &amp; cash</div>
+        <div class="cvf-c now">No easy view of job profitability or which invoices are overdue.</div>
+        <div class="cvf-c fut"><b>JustAsk</b> reports job profitability and flags overdue invoices, and emails you the chase list every Tuesday at 8:30.</div>
+      </div>
+      <div class="cvf-trow">
+        <div class="cvf-c theme">Field feedback &amp; safety</div>
+        <div class="cvf-c now">Near-misses and quality issues captured on paper, if at all.</div>
+        <div class="cvf-c fut">Operatives feed back <b>near-misses, accidents and quality notes</b> from the field, flagged straight to a supervisor.</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -475,19 +513,6 @@
         <div class="reason"><div class="ic">&#10003;</div><h3>Grows with you</h3><p>Add engineers at the same price per user as you build the business, with no upfront setup cost.</p></div>
         <div class="reason"><div class="ic">&#10003;</div><h3>24/7 UK support</h3><p>Round-the-clock support from the Leeds team, on the phone within a minute and all handled in-house.</p></div>
         <div class="reason"><div class="ic">&#10003;</div><h3>AI that chases for you</h3><p>JustAsk reads your own data to flag job profitability and overdue invoices, with the chase list emailed every Tuesday.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="quote">
-  <div class="wrap">
-    <div class="cta-band">
-      <h2>Your quote is ready</h2>
-      <p>We've prepared pricing tailored to ProTechnical Services's 2 engineers and 1 office team. Review the detail and come back to us with any questions.</p>
-      <div class="hero-actions">
-        <a class="btn btn-green" href="https://landing.bigchange.com/eTISFrny3loWNSqR" id="quote-btn" target="_blank" rel="noopener">View your quote</a>
-        <a class="btn btn-ghost" href="#demo">Rewatch the demo</a>
-      </div>
     </div>
   </div>
 </section>
